@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "IDB Plus - IndexedDB Manager",
+  "version": "1.0.0",
+  "description": "Powerful Chrome DevTools extension to inspect, manage, and inline-edit IndexedDB databases.",
+  "devtools_page": "devtools.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": []
+}

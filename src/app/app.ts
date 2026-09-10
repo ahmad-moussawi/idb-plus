@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { IndexedDBService } from './core/services/indexeddb.service';
+import { ThemeService } from './core/services/theme.service';
+import { UiStateService } from './core/services/ui-state.service';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, SidebarComponent],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('idb-plus');
+  readonly idb = inject(IndexedDBService);
+  readonly theme = inject(ThemeService);
+  readonly ui = inject(UiStateService);
 }

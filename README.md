@@ -1,59 +1,97 @@
-# IdbPlus
+<p align="center">
+  <img src="public/icons/icon128.png" width="80" height="80" alt="IDB Plus Logo" />
+</p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+<h1 align="center">IDB Plus</h1>
 
-## Development server
+<p align="center">
+  <strong>Desktop-grade IndexedDB GUI for Chrome DevTools. Fast spreadsheet grid, inline editing, instant search.</strong>
+</p>
 
-To start a local development server, run:
+<p align="center">
+  <img src="https://img.shields.io/badge/Manifest-V3-blue.svg" alt="Manifest V3" />
+  <img src="https://img.shields.io/badge/Angular-22-dd0031.svg?logo=angular" alt="Angular 22" />
+  <img src="https://img.shields.io/badge/TailwindCSS-v4-38bdf8.svg?logo=tailwindcss" alt="Tailwind CSS v4" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+</p>
+
+<p align="center">
+  <img src="public/showcase-01.png" alt="IDB Plus Light Mode" width="100%" />
+</p>
+
+<p align="center">
+  <img src="public/showcase-02.png" alt="IDB Plus Dark Mode" width="100%" />
+</p>
+
+---
+
+## Why
+
+Native DevTools IndexedDB is slow, read-only, clunky. No inline editing, no live search, painful JSON inspection.
+
+**IDB Plus = TablePlus for your browser tab.**
+
+| Native Chrome DevTools                | IDB Plus                                       |
+| :------------------------------------ | :--------------------------------------------- |
+| Read-only / console scripts to mutate | **Double-click inline editing** (type-safe)    |
+| Clunky collapsed trees                | **Auto-detected spreadsheet columns**          |
+| No search                             | **Real-time table & row filtering**            |
+| Manual record creation                | **Auto schema templates & 1-click clone**      |
+| Plain text view                       | **Fields visual editor + raw JSON beautifier** |
+| Hard to debug locally                 | **Live tab bridge + offline sandbox mode**     |
+
+---
+
+## Features
+
+- ⚡ **Spreadsheet Data Grid** — Auto columns from JSON keys. Pinned PKs, type badges (objects, arrays, bools).
+- ✍️ **Inline Cell Edit** — Double-click edit. Preserves numbers, booleans, objects. `Enter` saves, `Esc` cancels.
+- 🔍 **Live Search** — Instant filter across store names and row values.
+- 🗂️ **Row Inspector** — Slide-out drawer. Form inputs per field + Raw JSON editor with validator/formatter.
+- ➕ **CRUD & Clone** — 1-click duplicate record, add via pre-filled template, clear store, delete row.
+- 🌓 **Theme Support** — Native DevTools dark & light modes.
+- 🔒 **Private & Offline** — Zero telemetry, zero network calls. Pure browser APIs.
+
+---
+
+## Install
+
+### Load Unpacked (Dev Mode)
 
 ```bash
-ng serve
+git clone https://github.com/ahmad-moussawi/idb-plus.git
+cd idb-plus
+npm install
+npm run build
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Open `chrome://extensions`
+2. Enable **Developer mode** (top right)
+3. Click **Load unpacked** -> select `dist/idb-plus/browser`
+4. Open DevTools (`F12`) -> select **IDB+** tab
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Local Dev
 
 ```bash
-ng generate component component-name
+npm start     # Standalone sandbox @ http://localhost:4200
+npm run watch # Auto-rebuild extension
+npm test      # Vitest unit tests
+npm run build # Production build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Tech Stack
 
-## Building
+- **Angular 22** (Signals, Standalone)
+- **Tailwind CSS v4**
+- **TypeScript 5.9+**
+- **Chrome MV3** (`chrome.devtools.panels`)
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT
