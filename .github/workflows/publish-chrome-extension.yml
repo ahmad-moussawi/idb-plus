@@ -9,6 +9,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: chrome-web-store
     permissions:
       contents: read
     env:

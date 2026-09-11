@@ -106,6 +106,10 @@ The repository includes a GitHub Actions workflow at `.github/workflows/publish-
 - manually through **Actions > Publish Chrome extension**
 - automatically when pushing a tag that starts with `v`
 
+### Release Protection
+
+The workflow targets the `chrome-web-store` GitHub Environment so you can add required reviewers or other protection rules before a publish step is allowed to run.
+
 ---
 
 ## Tech Stack
