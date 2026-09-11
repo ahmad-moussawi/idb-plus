@@ -12,8 +12,8 @@ jobs:
     permissions:
       contents: read
     env:
-      EXTENSION_DIST: /home/runner/work/idb-plus/idb-plus/dist/idb-plus/browser
-      EXTENSION_ZIP: /home/runner/work/idb-plus/idb-plus/dist/idb-plus-chrome-extension.zip
+      EXTENSION_DIST: ${{ github.workspace }}/dist/idb-plus/browser
+      EXTENSION_ZIP: ${{ github.workspace }}/dist/idb-plus-chrome-extension.zip
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
