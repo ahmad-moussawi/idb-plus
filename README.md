@@ -83,6 +83,31 @@ npm run build # Production build
 
 ---
 
+## Release Automation
+
+The repository includes a GitHub Actions workflow at `.github/workflows/publish-chrome-extension.yml` that:
+
+1. installs dependencies
+2. builds the Angular app into `dist/idb-plus/browser`
+3. packages the Chrome extension as a zip file
+4. uploads the zip as a workflow artifact
+5. publishes the zip to the Chrome Web Store
+
+### Required GitHub Secrets
+
+- `CHROME_EXTENSION_ID`
+- `CHROME_EXTENSION_PUBLISHER_ID`
+- `CHROME_EXTENSION_CLIENT_ID`
+- `CHROME_EXTENSION_CLIENT_SECRET`
+- `CHROME_EXTENSION_REFRESH_TOKEN`
+
+### Triggers
+
+- manually through **Actions > Publish Chrome extension**
+- automatically when pushing a tag that starts with `v`
+
+---
+
 ## Tech Stack
 
 - **Angular 22** (Signals, Standalone)
